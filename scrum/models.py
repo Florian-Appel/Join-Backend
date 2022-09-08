@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Task(models.Model):
     title= models.CharField(max_length=50)
-    date = models.DateField(auto_created=True)
+    date = models.DateField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     priority = models.ForeignKey(Priority, on_delete=models.CASCADE)
     description = models.TextField()
