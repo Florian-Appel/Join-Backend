@@ -132,3 +132,5 @@ MEDIA_ROOT = '/home/danielstoehr/join_backend/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/danielstoehr/join_backend/static'
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/tasks'
