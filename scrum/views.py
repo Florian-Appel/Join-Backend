@@ -6,16 +6,37 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
 
-from scrum.serializers import RegisterSerializer, TaskSerializer, UserSerializer
-from .models import Task
+from scrum.serializers import (
+    CategorySerializer,
+    PrioritySerializer,
+    RegisterSerializer,
+    TaskSerializer,
+    UserSerializer,
+)
+from .models import Category, Priority, Task
 
 # Create your views here.
 
 
-class TaskViewSet(viewsets.ModelViewSet): 
+class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     # permission_classes = [IsAuthenticated]
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class PriorityViewSet(viewsets.ModelViewSet):
+    queryset = Priority.objects.all()
+    serializer_class = PrioritySerializer
 
 
 class UserDetailAPI(APIView):

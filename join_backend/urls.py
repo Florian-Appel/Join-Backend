@@ -20,6 +20,9 @@ from scrum import views
 
 router = routers.DefaultRouter()
 router.register(r"tasks", views.TaskViewSet)
+router.register(r"users", views.UserViewSet)
+router.register(r"priorities", views.PriorityViewSet)
+router.register(r"categories", views.CategoryViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
