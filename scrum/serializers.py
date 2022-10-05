@@ -1,20 +1,34 @@
-from .models import Task
+from unicodedata import category
+from .models import Category, Priority, Task
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
-
-class TaskSerializer(serializers.ModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Task
-        fields = "__all__"
+        model = Category
+        fields = '__all__'
 
+class PrioritySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Priority
+        fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id", "first_name", "last_name", "username"]
+class TaskSerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+    priority = PrioritySerializer()
+    user = UserSerializer()
+    class Meta:
+        model = Task
+        fields = '__all__'
+
+
+
 
 
 class RegisterSerializer(serializers.ModelSerializer):
