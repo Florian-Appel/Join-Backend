@@ -1,6 +1,4 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -10,10 +8,11 @@ from scrum.serializers import (
     CategorySerializer,
     PrioritySerializer,
     RegisterSerializer,
+    StatusSerializer,
     TaskSerializer,
     UserSerializer,
 )
-from .models import Category, Priority, Task
+from .models import Category, Priority, Status, Task
 
 # Create your views here.
 
@@ -27,6 +26,11 @@ class TaskViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class StatusViewSet(viewsets.ModelViewSet):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

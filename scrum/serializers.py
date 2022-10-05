@@ -1,9 +1,13 @@
-from unicodedata import category
-from .models import Category, Priority, Task
+from .models import Category, Priority, Task, Status
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
+
+
+class StatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Status
+        fields = "__all__"
 
 
 class CategorySerializer(serializers.ModelSerializer):
