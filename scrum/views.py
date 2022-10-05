@@ -12,8 +12,8 @@ from .models import Task
 # Create your views here.
 
 
-class TaskViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
+class TaskViewSet(viewsets.ModelViewSet): 
+    queryset = Task.objects.all().select_related()
     serializer_class = TaskSerializer
     # permission_classes = [IsAuthenticated]
 
