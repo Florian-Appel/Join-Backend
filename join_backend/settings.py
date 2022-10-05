@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'scrum'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -134,3 +136,4 @@ STATIC_ROOT = '/home/danielstoehr/join_backend/static'
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/tasks'
+CORS_ORIGIN_ALLOW_ALL = True
