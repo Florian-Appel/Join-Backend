@@ -3,6 +3,7 @@ from . import models
 
 
 class TaskAdmin(admin.ModelAdmin):
+    
     list_display = ("title", "date", "category", "priority", "description", "user")
 
 
