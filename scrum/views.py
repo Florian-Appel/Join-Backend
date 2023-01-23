@@ -14,8 +14,6 @@ from scrum.serializers import (
 )
 from .models import Category, Priority, Status, Task
 
-# Create your views here.
-
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
