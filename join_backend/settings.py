@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['join1.pythonanywhere.com','127.0.0.1', 'localhost']
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -136,4 +137,3 @@ STATIC_ROOT = '/home/Join1/Join-Backend/static'
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/tasks'
-CORS_ORIGIN_ALLOW_ALL = True
