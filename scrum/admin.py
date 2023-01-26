@@ -11,3 +11,4 @@ class TaskAdmin(admin.ModelAdmin):
 admin.site.register(models.Category)
 admin.site.register(models.Priority)
 admin.site.register(models.Task, TaskAdmin)
+admin.site.register(models.Status)
